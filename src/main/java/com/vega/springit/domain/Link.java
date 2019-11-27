@@ -16,7 +16,7 @@ import java.util.List;
 // @NoArgsConstructor en @Data komen van Lombok. Maakt opzet makkelijker, hoeft net zelf getters, setters, noString etc aan te maken
 @NoArgsConstructor
 @Data
-public class Link {
+public class Link extends Auditable {
 
     // !!!!!  @Id specificeert de primary key van de tabel!!!
     @Id

@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 // @NoArgsConstructor en @Data komen van Lombok. Maakt opzet makkelijker, hoeft net zelf getters, setters, noString etc aan te maken
 @NoArgsConstructor
 @Data
-public class Comment {
+public class Comment extends Auditable {
 
     // !!!!!@Id specificeert de primary key van de tabel!!!
     @Id
