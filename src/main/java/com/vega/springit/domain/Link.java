@@ -7,6 +7,9 @@ import lombok.NonNull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 // !!!!@Entity geeft aan dat deze class een entity class is, belangrijk voor database, creert een tabel met de classnaam
 @Entity
@@ -26,6 +29,7 @@ public class Link {
     private String url;
 
     //comments
-
+    @OneToMany(mappedBy = "Link")
+    private List<Comment> comments = new ArrayList<>();
 
 }
