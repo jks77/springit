@@ -1,8 +1,6 @@
-package com.vega.springit.domain;
+package com.vega.springit.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,9 +11,12 @@ import java.util.List;
 
 // !!!!@Entity geeft aan dat deze class een entity class is, belangrijk voor database, creert een tabel met de classnaam
 @Entity
-// @NoArgsConstructor en @Data komen van Lombok. Maakt opzet makkelijker, hoeft net zelf getters, setters, noString etc aan te maken
+@RequiredArgsConstructor
+@Getter @Setter
+@ToString
+// @NoArgsConstructor en @Data komen van Lombok. Maakt opzet makkelijker, hoeft niet zelf getters, setters, noString etc aan te maken
 @NoArgsConstructor
-@Data
+
 public class Link extends Auditable {
 
     // !!!!!  @Id specificeert de primary key van de tabel!!!
@@ -29,7 +30,10 @@ public class Link extends Auditable {
     private String url;
 
     //comments
+    // mappedBy zorgt voor 'Link_Id' in tabel, dit houdt dus in dat de comment gekoppeld wordt aan de Link ID (Foreign Key)
     @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
 
+    public void addComment(Comment comment) {comments.add(comment);
+    }
 }

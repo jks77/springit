@@ -1,4 +1,4 @@
-package com.vega.springit.domain;
+package com.vega.springit.model;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
