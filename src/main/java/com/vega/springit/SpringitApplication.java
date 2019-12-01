@@ -33,6 +33,7 @@ public class SpringitApplication {
             commentRepository.save(comment);
             link.addComment(comment);
 
+
             Link linkOne = new Link("Nieuwe link gemaakt", "https://google.com");
             linkRepository.save(linkOne);
 
