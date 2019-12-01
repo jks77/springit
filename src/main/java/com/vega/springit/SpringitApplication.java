@@ -1,7 +1,5 @@
 package com.vega.springit;
 
-
-
 import com.vega.springit.model.Comment;
 import com.vega.springit.model.Link;
 import com.vega.springit.repository.CommentRepository;
@@ -25,7 +23,7 @@ public class SpringitApplication {
         SpringApplication.run(SpringitApplication.class, args);
     }
 
-    @Bean
+//    @Bean
     CommandLineRunner runner(LinkRepository linkRepository, CommentRepository commentRepository) {
         return args -> {
             Link link = new Link("Getting Started with Spring Boot 2", "https://therealdanvega.com/spring-boot-2");
@@ -45,7 +43,6 @@ public class SpringitApplication {
 
             System.out.println("We just inserted link into comment");
             System.out.println("=============================");
-
         };
     }
 }
